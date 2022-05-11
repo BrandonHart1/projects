@@ -56,8 +56,8 @@ const ProductForm = () => {
 
             {
                 // -------- show each product on the form using .map --------
-                productList.map(product => {
-                    return <div>
+                productList.map((product,i) => {
+                    return <div key={i}> {/* ----- needed a key for errors ----- */}
                         <h1>{product.name}</h1>
                         <h4>Price:  {product.price}</h4>
                         <h4>Description:  {product.description}</h4>

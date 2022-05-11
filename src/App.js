@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import { Navbar } from 'react-bootstrap';
 import React from 'react';
 import {
   BrowserRouter,
@@ -13,11 +15,17 @@ import ProductForm from './components/ProductForm';
 
 function App() {
   return (
-
       <div className="App container">
+        <div>
+          <Navbar bg="black" variant="dark" >
+            <Navbar>
+              MeBay
+            </Navbar>
+          </Navbar>
+        </div>
         <ProductForm />
       </div>
-      
+
   );
 }
 
