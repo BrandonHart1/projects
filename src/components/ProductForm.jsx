@@ -1,4 +1,7 @@
+// -------- add new product --------
+
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // ----- lets us redirect to the dashboard -----
 
 
 const ProductForm = () => {
@@ -8,7 +11,7 @@ const ProductForm = () => {
     let [price, setPrice] = useState("");
     let [description, setDescription] = useState("");
     let [image, setImage] = useState("");
-
+    const navigate = useNavigate()
 
     // -------- state variable to store all the products --------
     let [productList, setProductList] = useState([])  // ----- start as an empty array -----
@@ -24,6 +27,8 @@ const ProductForm = () => {
         setPrice("")
         setDescription("")
         setImage("")
+
+        navigate("/") // ----- navigate to the dashboard path -----
 
         // -------- add the product object to the productList array
         setProductList([...productList, newProductObj]) // set the productList variable using the setter to contain a copy of current(...) list
